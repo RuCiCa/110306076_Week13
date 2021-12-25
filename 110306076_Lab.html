@@ -1,0 +1,74 @@
+<html>
+<body>
+	<table style = "border:2px #ccc solid;border-radius:10px;width:360px;height:60px;background-color:#eee;position: center;">
+	<form>
+	<tr><th><h1>JS Caculator</h1></th></tr>
+	<tr>
+	<td><div style="text-align:center";>Number 1</div></td>
+	</tr>
+	<tr>
+	<td><input type="number" id="num1" style= "width:360px"></td>
+	</tr>
+	<tr>
+	<td><div style="text-align:center";>Number 2</div></td>
+	</tr>
+	<tr>
+	<td><input type="number" id="num2" style= "width:360px"></td>
+	</tr>
+	<tr>
+	<td><div style="text-align:center";>Operate way?</div></td>
+	</tr>
+	<tr>
+				<td><select id = "operator" name = "method" style= "width:360px">
+						<option value="1">+</option>
+						<option value="2">-</option>
+						<option value="3">x</option>
+						<option value="4">/</option>
+				</select></td>
+	</tr>
+	</form>
+	<tr>
+	</tr>
+	<tr>
+
+	<td colspan="2" rowspan="2">
+	<input type = "button" value = "Count" class = "cal_button" style= "width:360px; background-color:orangered;" onclick="calculator()">
+	<p style="text-align:center">Result = <span id = "result"></span></p>
+	</td>
+	</tr>
+	</table>
+
+	<script>
+		function calculator() {
+			var n1 = parseInt(document.getElementById('num1').value);
+			var n2 = parseInt(document.getElementById('num2').value);
+			var operator = parseInt(document.getElementById('operator').value);
+			if (operator == 1) {
+				
+				document.getElementById('result').innerHTML = add(n1, n2);
+			} else if (operator == 2) {
+				document.getElementById('result').innerHTML = minus(n1, n2);
+			} else if (operator == 3) {
+				document.getElementById('result').innerHTML = multiply(n1, n2);
+			} else {
+				document.getElementById('result').innerHTML = divide(n1, n2);
+			}
+		}
+
+		function add(num1, num2) {
+			return num1 + num2;
+		}
+
+		function minus(num1, num2) {
+			return num1 - num2;
+		}
+
+		function multiply(num1, num2) {
+			return num1 * num2;
+		}
+
+		function divide(num1, num2) {
+			return num1 / num2;
+		}
+
+	</script>
